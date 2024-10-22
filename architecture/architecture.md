@@ -12,8 +12,8 @@
 
 6. Ir sensor -- Модуль инфракрасного датчика скорости, датчик расстояния, оптрон для Arduino Smart Car/Robot
 
-7. DAC mcp4822
+7. Stepper motor driver (DAC mcp4822)
 
-8. Motor with mirror
+8. Motor with mirror (stepper moror)
 
 ![image.png](./image.png)
