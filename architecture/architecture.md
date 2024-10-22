@@ -16,4 +16,4 @@
 
 8. Motor with mirror
 
-[image.png[image.png]]
+![image.png](./image.png)
