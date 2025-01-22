@@ -7,20 +7,10 @@
 const int stepsPerPixelX = 10;
 const int stepsPerPixelY = 5;
 const int stepDelay = 200;
-int size = 10;
+const int sizeX = 10;
+const int sizeY = 10;
 
-int a[10][10] = {
-  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 1, 1, 0, 0, 1, 1, 0, 0}, 
-  {0, 0, 1, 1, 0, 0, 1, 1, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {1, 1, 0, 0, 0, 0, 0, 0, 1, 1}, 
-  {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 
-  {0, 0, 1, 1, 1, 1, 1, 1, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-};
+int pixels[sizeX * sizeY] = {0};
 
 void setup() {
   pinMode(MOTOR_X_STEP_PIN, OUTPUT);
@@ -31,7 +21,8 @@ void setup() {
 }
 
 void putPixel(int x, int y) {
-  int sig = a[y][x];
+  int index = y * sizeX + x;
+  int sig = pixels[index];
   digitalWrite(LED_PIN, sig);
 }
 
@@ -99,7 +90,7 @@ void loop() {
   change_status();
   if (work_status)
   {
-    drawImage(size, size);
+    drawImage(sizeX, sizeY);
   }else{
     delay(10);
   }
